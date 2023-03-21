@@ -6,14 +6,14 @@ import folium
 
 
 def get_df():
-    df = pd.read_csv("place.csv", encoding='utf-8')
+    df = pd.read_csv("Streamlit/place.csv", encoding='utf-8')
     return df
 
 def main():
     
     st.set_page_config(page_title='Where to meet', layout="wide")
     
-    st.sidebar.image(Image.open('h_logo.png'))
+    st.sidebar.image(Image.open('Streamlit/h_logo.png'))
     st.sidebar.write("---")
     rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple']
     color = ['black', 'black', 'black', 'white', 'white', 'white', 'white']
@@ -29,7 +29,7 @@ def main():
 
     col1, col2 = st.columns([1,2])
     with col1:
-        st.image(Image.open('question.jpg'))
+        st.image(Image.open('Streamlit/question.jpg'))
     with col2:
         center = [37.5575,126.9245]
         df = get_df()
@@ -52,8 +52,8 @@ def main():
                 folium.PolyLine(locations = [center, [row['출발지_x'],row['출발지_y']]], tooltip=row['to_홍대']).add_to(m)   
             folium.Marker(location = center, tooltip='홍대입구역', icon=folium.Icon(color='red')).add_to(m)
             m.fit_bounds(m.get_bounds())
-            m.save('map.html')
-            st.components.v1.html(open("map.html", "rb").read(), height=600)
+            m.save('Streamlit/map.html')
+            st.components.v1.html(open("Streamlit/map.html", "rb").read(), height=600)
     st.write("---")
     
 if __name__ == '__main__':
