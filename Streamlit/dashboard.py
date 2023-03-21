@@ -14,6 +14,17 @@ def get_df():
 def main():
     
     st.set_page_config(page_title='Where to meet', layout="wide")
+    
+    st.sidebar.image(Image.open('C:/Users/user/Desktop/강지원/Github/Python_edu/Streamlit/h_logo.png'))
+    st.sidebar.write("---")
+    rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple']
+    color = ['black', 'black', 'black', 'white', 'white', 'white', 'white']
+    text = 'WELCOME'
+    for r, c, t in zip(rainbow, color, text):
+        st.sidebar.markdown(f"<h3 style='color:{c}; background-color:{r}'>__{t}:</h3>", unsafe_allow_html=True)
+    st.sidebar.write("---")
+    st.sidebar.text("This is Jiwon!\nNice to meet you!")
+    
     st.header("A Letter From Mr.Jung")
     st.subheader(':blue["Let me know where we will meet on Satuerday, with the dashboard made by streamlit."]')
     st.write("---")
@@ -46,17 +57,6 @@ def main():
             m.save('C:/Users/user/Desktop/강지원/Github/Python_edu/Streamlit/map.html')
             st.components.v1.html(open("C:/Users/user/Desktop/강지원/Github/Python_edu/Streamlit/map.html", "rb").read(), height=600)
     st.write("---")
-
-    st.sidebar.image(Image.open('C:/Users/user/Desktop/강지원/Github/Python_edu/Streamlit/h_logo.png'))
-    st.sidebar.write("---")
-    rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple']
-    color = ['black', 'black', 'black', 'white', 'white', 'white', 'white']
-    text = 'WELCOME'
-    for r, c, t in zip(rainbow, color, text):
-        st.sidebar.markdown(f"<h3 style='color:{c}; background-color:{r}'>__{t}:</h3>", unsafe_allow_html=True)
-    st.sidebar.write("---")
-    st.sidebar.text("This is Jiwon!\nNice to meet you!")
-
     
 if __name__ == '__main__':
     
