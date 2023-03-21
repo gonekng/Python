@@ -1,4 +1,4 @@
-!pip install folium
+pip install folium
 
 import os
 import numpy as np
