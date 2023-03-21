@@ -4,7 +4,6 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 import folium
-from streamlit_folium import st_folium
 
 
 def get_df():
