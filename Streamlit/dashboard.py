@@ -28,17 +28,17 @@ def main():
     st.sidebar.text("This is Jiwon!\nNice to meet you!")
     
     # 메인 화면
-    st.header("A Letter From Peter")
+    st.title("A Letter From Peter")
     st.subheader(':blue["Let me know where we will meet on Satuerday, with the dashboard made by streamlit."]')
     st.write("---")
 
     # 레이아웃(2분할)
     col1, col2 = st.columns([1,2])
     with col1:
+        st.subheader('"What about 홍대입구?"')
         st.image(Image.open('question.jpg'))
         
     with col2:
-        st.subheader(':blue["What about 홍대입구?"]')
         center = [37.5575,126.9245] # 홍대입구역 좌표
         
         # 데이터 불러오기
