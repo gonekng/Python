@@ -101,6 +101,9 @@ def run_query():
                 columns = cols
             )
             st.dataframe(results_df)
+            if st.button('Download'):
+                convert_df(results_df)
+
     else:
         st.error('DB 파일이 존재하지 않습니다. DB 파일을 먼저 생성하세요.')
 
@@ -125,7 +128,7 @@ def main():
     )
 
   # 사이드바 설정
-    st.sidebar.subheader("🎈Streamlit으로 Sqlite3 DB 관리하기")
+    st.sidebar.subheader("🎈Streamlit으로 Sqlite3 DB 연동하기")
     st.sidebar.write("---")
     
     page_names_to_funcs = {
